@@ -6,6 +6,7 @@
 package juanmendez_examen1p2;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import javax.swing.JOptionPane;
 import java.util.Scanner;
 
@@ -88,33 +89,29 @@ public class JuanMendez_Examen1P2 {
                             + "1.- Ping_<ip> \n"
                             + "2.- Show \n"
                             + "3.- exit \n"));
-                    boolean xd = true;
-                    while (xd) {
-                        switch (m) {
-                            case 1:
-                                String n = JOptionPane.showInputDialog("Nombre:");
-                                String ip = JOptionPane.showInputDialog("Direccion IP: ");
-                                String masca = JOptionPane.showInputDialog("Mascara: ");
-                                JOptionPane.showConfirmDialog(null, binario(ip));
-                                JOptionPane.showConfirmDialog(null, masca);
-                                for (int i = 0; i < ipXD.size(); i++){
-                                    if (ip.contains(ipXD.get(i))){
-                                        JOptionPane.showConfirmDialog(null, "El ping es valido");
-                                    }else{
-                                        JOptionPane.showConfirmDialog(null, "Ping invalido");
-                                                
-                                    }
-                                        
-                                }
-                                break;
-                            case 2:
-                                System.out.println("Computadoras creadas actualmente");
-                                for (Object o : pc) {
-                                    System.out.println(""+ o);
-                                }
-                                break;
-                            case 3:
-                                xd = false;
+                    if (m == 1) {
+                        String n = JOptionPane.showInputDialog("Nombre:");
+                        String ip = JOptionPane.showInputDialog("Direccion IP: ");
+                        String masca = JOptionPane.showInputDialog("Mascara: ");
+                        JOptionPane.showConfirmDialog(null, binario(ip));
+                        JOptionPane.showConfirmDialog(null, masca);
+                        for (int i = 0; i < ipXD.size(); i++) {
+                            if (ip.contains(ipXD.get(i))) {
+                                JOptionPane.showConfirmDialog(null, "El ping es valido");
+                            } else {
+                                JOptionPane.showConfirmDialog(null, "Ping invalido");
+
+                            }
+
+                        }
+                    } else {
+                        if (m == 2) {
+                            Iterator i = pc.iterator();
+                            while (i.hasNext()) {
+                                Object next = i.next();
+                                System.out.println(next);
+
+                            }
                         }
                     }
 
