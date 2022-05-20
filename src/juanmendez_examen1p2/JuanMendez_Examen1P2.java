@@ -109,10 +109,8 @@ public class JuanMendez_Examen1P2 {
                                 break;
                             case 2:
                                 System.out.println("Computadoras creadas actualmente");
-                                int i = 0;
                                 for (Object o : pc) {
-                                    System.out.println(i + "" + o);
-                                    i++;
+                                    System.out.println(""+ o);
                                 }
                                 break;
                             case 3:
