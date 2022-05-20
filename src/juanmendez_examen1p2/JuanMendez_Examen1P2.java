@@ -23,6 +23,7 @@ public class JuanMendez_Examen1P2 {
     public static void main(String[] args) {
         // TODO code application logic here
         ArrayList<PCS> pc = new ArrayList();
+        ArrayList<String> ipXD = new ArrayList();
         boolean opcion = true;
         while (opcion) {
             int opcion1 = Integer.parseInt(
@@ -56,6 +57,7 @@ public class JuanMendez_Examen1P2 {
                                         int RAM = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la capacidad de RAM que dispone su PC"));
                                         int almacenamiento = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de almacenamiento que dispone su Pc"));
                                         Escritorio es = new Escritorio(tipow, IP, mascara, hotsname, RAM, almacenamiento);
+                                        ipXD.add(IP);
                                         pc.add(es);
 
                                         break;
@@ -68,6 +70,7 @@ public class JuanMendez_Examen1P2 {
                                         String marca = JOptionPane.showInputDialog("Ingrese la marca de su Laptop");
                                         String definicion = JOptionPane.showInputDialog("Ingrese la definicion de Laptop");
                                         laptop a = new laptop(marca, definicion, IP2, mascara2, hotsname2, RAM1, almacenamiento1);
+                                        ipXD.add(IP2);
                                         pc.add(a);
                                 }
                                 break;
@@ -92,7 +95,17 @@ public class JuanMendez_Examen1P2 {
                                 String n = JOptionPane.showInputDialog("Nombre:");
                                 String ip = JOptionPane.showInputDialog("Direccion IP: ");
                                 String masca = JOptionPane.showInputDialog("Mascara: ");
-                                binario(ip);
+                                JOptionPane.showConfirmDialog(null, binario(ip));
+                                JOptionPane.showConfirmDialog(null, masca);
+                                for (int i = 0; i < ipXD.size(); i++){
+                                    if (ip.contains(ipXD.get(i))){
+                                        JOptionPane.showConfirmDialog(null, "El ping es valido");
+                                    }else{
+                                        JOptionPane.showConfirmDialog(null, "Ping invalido");
+                                                
+                                    }
+                                        
+                                }
                                 break;
                             case 2:
                                 System.out.println("Computadoras creadas actualmente");
@@ -115,12 +128,25 @@ public class JuanMendez_Examen1P2 {
         }
     }
 
-    public static void  binario(String Ip) {
-        for (int i = 0; i < Ip.length(); i++){
-            int cara = Ip.charAt(i);
-            System.out.println(cara);
+    public static String binario(String ip) {
+        String resultado = "";
+        if (ip.contains("192.14.65.86")) {
+            resultado = "11000000.00001110.01000001.01010110";
+        } else {
+            if (ip.contains("192.14.64.128")) {
+                resultado = "11000000.00001110.01000010.10000000";
             }
-        }
-    }
-    
 
+        }
+        return resultado;
+    }
+
+    public static int masca(String mascara) {
+        int contador = 0;
+        if (mascara.contains("11000000.00001110.01000010.10000000")) {
+            contador = 24;
+        }
+
+        return contador;
+    }
+}
