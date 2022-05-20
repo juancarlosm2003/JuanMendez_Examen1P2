@@ -9,20 +9,35 @@ package juanmendez_examen1p2;
  *
  * @author Juan Carlos Mendez
  */
-public class PCS {
+public class Escritorio extends PCS {
 
-    String direccion, mascara, hostname;
-    int RAM, almacenamiento;
+    String tipo;
+    boolean tarjeta;
 
-    public PCS() {
+    public Escritorio() {
+        super();
     }
 
-    public PCS(String direccion, String mascara, String hostname, int RAM, int almacenamiento) {
-        this.direccion = direccion;
-        this.mascara = mascara;
-        this.hostname = hostname;
-        this.RAM = RAM;
-        this.almacenamiento = almacenamiento;
+    public Escritorio(String tipo, boolean tarjeta, String direccion, String mascara, String hostname, int RAM, int almacenamiento) {
+        super(direccion, mascara, hostname, RAM, almacenamiento);
+        this.tipo = tipo;
+        this.tarjeta = tarjeta;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public boolean isTarjeta() {
+        return tarjeta;
+    }
+
+    public void setTarjeta(boolean tarjeta) {
+        this.tarjeta = tarjeta;
     }
 
     public String getDireccion() {
@@ -67,7 +82,7 @@ public class PCS {
 
     @Override
     public String toString() {
-        return "PCS{" + "direccion=" + direccion + ", mascara=" + mascara + ", hostname=" + hostname + ", RAM=" + RAM + ", almacenamiento=" + almacenamiento + '}';
+        return "Escritorio{" + "tipo=" + tipo + ", tarjeta=" + tarjeta + '}';
     }
 
 }

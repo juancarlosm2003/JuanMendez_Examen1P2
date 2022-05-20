@@ -27,12 +27,15 @@ public class JuanMendez_Examen1P2 {
             System.out.println("1.- Agregar PC");
             System.out.println("2.- Ingresar a PC");
             opcion = lea.nextInt();
-            if (opcion == 1){
+            if (opcion == 1) {
                 System.out.println("Ingrese la direccion IP");
                 String Ip = lea.next();
                 System.out.println("Ingrese la mascara de red");
                 String mascara = lea.next();
-                
+            }else{
+                if (opcion == 2){
+                    
+                }
             }
         }
     }
