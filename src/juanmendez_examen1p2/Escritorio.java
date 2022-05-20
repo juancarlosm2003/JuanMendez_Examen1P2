@@ -12,16 +12,14 @@ package juanmendez_examen1p2;
 public class Escritorio extends PCS {
 
     String tipo;
-    boolean tarjeta;
 
     public Escritorio() {
         super();
     }
 
-    public Escritorio(String tipo, boolean tarjeta, String direccion, String mascara, String hostname, int RAM, int almacenamiento) {
+    public Escritorio(String tipo, String direccion, String mascara, String hostname, int RAM, int almacenamiento) {
         super(direccion, mascara, hostname, RAM, almacenamiento);
         this.tipo = tipo;
-        this.tarjeta = tarjeta;
     }
 
     public String getTipo() {
@@ -30,14 +28,6 @@ public class Escritorio extends PCS {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
-    }
-
-    public boolean isTarjeta() {
-        return tarjeta;
-    }
-
-    public void setTarjeta(boolean tarjeta) {
-        this.tarjeta = tarjeta;
     }
 
     public String getDireccion() {
@@ -82,7 +72,7 @@ public class Escritorio extends PCS {
 
     @Override
     public String toString() {
-        return "Escritorio{" + "tipo=" + tipo + ", tarjeta=" + tarjeta + '}';
+        return "PCS{" + "direccion=" + direccion + ", mascara=" + mascara + ", hostname=" + hostname + ", RAM=" + RAM + ", almacenamiento=" + almacenamiento + '}';
     }
 
 }

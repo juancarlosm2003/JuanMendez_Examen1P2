@@ -12,17 +12,55 @@ package juanmendez_examen1p2;
 public class laptop extends PCS {
 
     String marca, definicion;
-    boolean RGB;
 
     public laptop() {
         super();
     }
 
-    public laptop(String marca, String definicion, boolean RGB, String direccion, String mascara, String hostname, int RAM, int almacenamiento) {
+    public laptop(String marca, String definicion, String direccion, String mascara, String hostname, int RAM, int almacenamiento) {
         super(direccion, mascara, hostname, RAM, almacenamiento);
         this.marca = marca;
         this.definicion = definicion;
-        this.RGB = RGB;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getMascara() {
+        return mascara;
+    }
+
+    public void setMascara(String mascara) {
+        this.mascara = mascara;
+    }
+
+    public String getHostname() {
+        return hostname;
+    }
+
+    public void setHostname(String hostname) {
+        this.hostname = hostname;
+    }
+
+    public int getRAM() {
+        return RAM;
+    }
+
+    public void setRAM(int RAM) {
+        this.RAM = RAM;
+    }
+
+    public int getAlmacenamiento() {
+        return almacenamiento;
+    }
+
+    public void setAlmacenamiento(int almacenamiento) {
+        this.almacenamiento = almacenamiento;
     }
 
     public String getMarca() {
@@ -41,17 +79,9 @@ public class laptop extends PCS {
         this.definicion = definicion;
     }
 
-    public boolean isRGB() {
-        return RGB;
-    }
-
-    public void setRGB(boolean RGB) {
-        this.RGB = RGB;
-    }
-
     @Override
     public String toString() {
-        return "laptop{" + "marca=" + marca + ", definicion=" + definicion + ", RGB=" + RGB + '}';
+        return "PCS{" + "direccion=" + direccion + ", mascara=" + mascara + ", hostname=" + hostname + ", RAM=" + RAM + ", almacenamiento=" + almacenamiento + "laptop{" + "marca=" + marca + ", definicion=" + definicion + '}';
     }
 
 }
